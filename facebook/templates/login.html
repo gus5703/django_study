@@ -1,0 +1,11 @@
+<h1>helloworld</h1>
+{% if request.user.is_anonymous %}
+<form method = 'post' action=".">
+    <input type = "text" name = "username">
+    <input type = "password" name = "password">
+    <input type = "submit" value = "login">
+{% csrf_token %}
+</form>
+{% else %}
+<p>Hi! {{ request.user.username }}</p>
+{% endif %}
